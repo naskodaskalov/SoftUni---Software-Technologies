@@ -1,0 +1,232 @@
+@import 'https://fonts.googleapis.com/css?family=Roboto';
+
+body {
+    margin: 0;
+    padding: 0;
+    color: #595959;
+    font-weight: normal;
+    font-size: 14px;
+}
+
+header {
+    background: #2b2b2b;
+    font-family: 'Roboto', sans-serif;
+    color: #d7d9d9;
+    font-size: 12px;
+    padding: 15px 5px 5px 5px;
+    min-height:120px;
+}
+
+header a {
+    text-decoration: none;
+    color: #d7d9d9;
+}
+
+div.login-form {
+    display: inline-block;
+}
+
+img.header-logo {
+    height: 100px;
+    width: 60%;
+    padding-left: 20px;
+}
+
+nav {
+    display: flex;
+    margin-left: 5px;
+    float: left;
+}
+
+main {
+   display: flex;
+}
+ul.navigation{
+    list-style-type: none;
+    padding-left: 0;
+    float: left;
+    border-left: 1px #2b2b2b solid;
+    width: 150px;
+}
+
+ul.navigation a {
+    text-decoration: none;
+}
+
+ul.navigation>li {
+    padding: 10px 10px 10px 5px;
+}
+
+ul.navigation a:hover {
+    background-color: #8c0303;
+    color: #d7d9d9;
+    padding: 10px 10px 10px 5px;
+}
+
+div.footer-menu {
+    display: block;
+    margin-top: 20px;
+    text-align: center;
+}
+
+div.left-menu {
+    width: 20%;
+    margin-left: 50px;
+    display: inline-block;
+    text-align: left;
+}
+
+div.center-menu {
+    width: 20%;
+    margin-left: 50px;
+    padding-left: 10px;
+    display: inline-block;
+    text-align: left;
+    border-left: 1px #2b2b2b solid;
+}
+
+div.right-menu {
+    width: 20%;
+    margin-left: 50px;
+    padding-left: 10px;
+    display: inline-block;
+    text-align: left;
+    border-left: 1px #2b2b2b solid;
+}
+
+div.footer-menu-titles {
+    border-bottom: 2px solid transparent;
+    border-image: linear-gradient(to right, #2b2b2b 0%, #eee 100%);
+    border-image-slice: 1;
+}
+
+ul.footer-list-menu {
+    list-style-type: none;
+    padding: 0;
+    margin: 10px;
+}
+
+ul.footer-list-menu a {
+    text-decoration: none;
+    color: #222;
+}
+
+footer {
+    border-top: 1px solid #2b2b2b;
+    padding: 5px;
+    margin-top: 50px;
+    text-align: left;
+}
+
+table th, table td {
+    background: #DDD;
+    padding: 5px;
+}
+
+ul#messages li {
+    display: block;
+    width: 80%;
+    margin: 5px auto;
+    text-align: center;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+ul#messages li.info {
+    background: #7f7;
+}
+
+ul#messages li.error {
+    background: #d00;
+    color: white;
+}
+
+.validation-error {
+    vertical-align: top;
+    margin-left: 10px;
+    color: red;
+}
+
+#logged-in-info {
+    float: right;
+    margin-top: 18px;
+}
+
+#logged-in-info form {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+
+body>main:after {
+     content: '';
+     display: block;
+     clear: both;
+}
+
+a {
+    text-decoration: none;
+}
+
+.registration-form {
+    line-height: 25px;
+}
+
+.login-form {
+    line-height: 25px;
+}
+
+div.registration-titles {
+    width: 20%;
+    display: inline-block;
+}
+
+div.registration-inputs {
+    width: 20%;
+    display: inline-block;
+}
+
+.pages-titles {
+    text-transform: uppercase;
+    font-size: 24px;
+    font-weight: 300;
+}
+
+.box-heading {
+    padding: 10px 10px 10px 0px;
+    border-bottom: 1px solid transparent;
+    border-image: linear-gradient(to right, #2b2b2b 0%, #eee 100%);
+    border-image-slice: 1;
+    position: relative;
+    text-transform: uppercase;
+    font-size: 16px;
+    }
+
+.box {
+    display: inline-block;
+    width: 30%;
+    margin-right: 20px;
+}
+
+.box>p {
+    display: inline;
+}
+
+.divTable
+{
+    display:  table;
+}
+
+.divRow
+{
+    display:table-row;
+    width:auto;
+
+}
+
+.divCell
+{
+    float:left;
+    display:table-column;
+    width:200px;
+}
