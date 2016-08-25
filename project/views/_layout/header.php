@@ -10,22 +10,7 @@
 </head>
 
 <body>
-<header>
-    <?php if (!$this->isLoggedIn) : ?>
-    <div class="login-form">
-        <form method="post">
-            <div><label for="username">Потребителско име:</label></div>
-            <input id="username" type="text" name="username" placeholder="enter your username here" />
-            <div><label for="password">Парола:</label></div>
-            <input id="password" type="password" name="password" placeholder="enter your password here" />
-            <div><input type="submit" value="Login" />
-                <a href="<?=APP_ROOT?>/users/register">[Register first]</a></div>
-        </form  >
-    </div>
-    <?php endif; ?>
-
-        <a href="<?=APP_ROOT?>"><img class="header-logo" src="<?=APP_ROOT?>/content/images/logo1.png"></a>
-</header>
+<header><a href="<?=APP_ROOT?>"><img class="header-logo" src="<?=APP_ROOT?>/content/images/header-logo.jpg"></a></header>
 
 <nav>
     <ul class="navigation">

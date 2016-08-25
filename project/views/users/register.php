@@ -19,7 +19,7 @@
                 <div class="divCell"><input type="password" id="password" name="password" placeholder="парола"/></div>
             </div>
             <div class="divRow">
-                <div class="divCell"><label for="password_confirm">Въведете отново своята парола:</label></div>
+                <div class="divCell"><label for="password_confirm">Повторете своята парола:</label></div>
                 <div class="divCell"><input type="password" id="password_confirm" name="password_confirm" placeholder="повторете вашата парола"/></div>
             </div>
             <div class="divRow">
@@ -35,7 +35,7 @@
                 <div class="divCell"><input type="text" id="photo" name="photo" placeholder="link to your photo"/></div>
             </div>
             <div class="divRow">
-                <div class="divCell" align="center"><input type="submit" value="Регистрирай" />
+                <div class="divCell-buttons" align="center"><input type="submit" value="Регистрирай" />
                     <a href="<?=APP_ROOT?>/">[Отказ]</a><a href="<?=APP_ROOT?>/users/login">[Влез]</a></div>
             </div>
 

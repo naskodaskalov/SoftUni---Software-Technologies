@@ -15,7 +15,7 @@
             </div>
             </div>
             <div class="divRow">
-                <div class="divCell" align="center"><input type="submit" value="Влез" />
+                <div class="divCell-buttons" align="center"><input type="submit" value="Влез" />
                     <a href="<?=APP_ROOT?>/">[Отказ]</a><a href="<?=APP_ROOT?>/users/register">[Регистрирай се]</a></div>
             </div>
 
