@@ -14,17 +14,21 @@
 
 <nav>
     <ul class="navigation">
+        <?php if ($this->isLoggedIn) : ?>
+            <div class="greeting">Здравейте, <b><?=htmlspecialchars($_SESSION['username'])?>!</b></div>
+        <?php endif; ?>
         <li><a href="<?=APP_ROOT?>/">Начало</a></li>
-        <?php if ($this->isLoggedIn) : ?>
-            <li><a href="<?=APP_ROOT?>/posts">Posts</a></li>
-            <li><a href="<?=APP_ROOT?>/posts/create">Create Post</a></li>
+        <?php if ($this->isLoggedIn && $_SESSION['username'] == "admin") { ?>
+            <li><a href="<?=APP_ROOT?>/advertisements">Всички обяви</a></li>
+            <li><a href="<?=APP_ROOT?>/advertisements/create">Добавете нова обява</a></li>
             <li><a href="<?=APP_ROOT?>/users">Users</a></li>
-        <?php else: ?>
+            <li><a href="<?=APP_ROOT?>/users/logout">Излез</a></li>
+        <?php } elseif (!$this->isLoggedIn) { ?>
             <li><a href="<?=APP_ROOT?>/users/login">Влез</a> / <a href="<?=APP_ROOT?>/users/register">Регистрация</a></li>
-        <?php endif; ?>
-        <?php if ($this->isLoggedIn) : ?>
+        <?php } else { ?>
+                <li><a href="<?=APP_ROOT?>/advertisements/create">Добавете нова обява</a></li>
                 <li><a href="<?=APP_ROOT?>/users/logout">Излез</a></li>
-        <?php endif; ?>
+        <?php } ?>
 
         <li><a href="<?=APP_ROOT?>/contacts">Контакт с нас</a></li>
     </ul>

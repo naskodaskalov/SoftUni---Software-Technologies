@@ -82,12 +82,12 @@ function __autoload(string $class_name)
     }
 }
 
-function cutLongText(string $text, int $maxSize=200, bool $htmlEscape = true) : string
+function cutLongText(string $text, int $maxSize=100, bool $htmlEscape = true) : string
 {
     $append = '';
     if (strlen($text) > $maxSize) {
         $text = substr($text, 0, $maxSize);
-        $append = '&hellip;';
+        $append ='<a href="' . APP_ROOT . '/home/view/' . $advertisement['id']. '">';
     }
     if ($htmlEscape)
         $text = htmlspecialchars($text);

@@ -3,10 +3,18 @@
 class HomeController extends BaseController
 {
     function index() {
-        // TODO: Load posts to be displayed here ...
+        $lastAds = $this->model->getLastAds(5);
+        $this->advertisements = array_slice($lastAds, 0, 3);
+        $this->sidebarAds = $lastAds;
     }
-	
-	function view($id) {
-        // TODO: Load a post to be displayed here ...
+
+    function view(int $id) {
+        $advertisement = $this->model->getAdsById($id);
+        if (!$advertisement)
+        {
+            $this->addErrorMessage("Error: invalid post id.");
+            $this->redirect("");
+        }
+        $this->advertisement = $advertisement;
     }
 }
