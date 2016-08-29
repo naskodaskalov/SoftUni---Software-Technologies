@@ -1,4 +1,4 @@
-<?php $this->title = 'Форма за регистрация'; ?>
+<?php $this->title = perm_title . ' :: Форма за регистрация'; ?>
 
 <h2 class="pages-titles"><?= htmlspecialchars($this->title) ?></h2>
 
@@ -38,7 +38,6 @@
                 <div class="divCell-buttons" align="center"><input type="submit" value="Регистрирай" />
                     <a href="<?=APP_ROOT?>/">[Отказ]</a><a href="<?=APP_ROOT?>/users/login">[Влез]</a></div>
             </div>
-
         </div>
     </form>
 

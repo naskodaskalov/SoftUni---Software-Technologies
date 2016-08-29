@@ -15,8 +15,6 @@ header {
     font-family: 'Roboto', sans-serif;
     color: #d7d9d9;
     font-size: 12px;
-    /*padding: 15px 5px 5px 5px;*/
-    /*min-height:120px;*/
     max-height:202px;
 }
 
@@ -43,8 +41,9 @@ nav {
 }
 
 main {
-   display: flex;
+    display: flex;
 }
+
 ul.navigation{
     list-style-type: none;
     padding-left: 0;
@@ -70,6 +69,7 @@ ul.navigation a:hover {
 }
 
 div.footer-menu {
+    margin: auto;
     display: block;
     margin-top: 20px;
     text-align: center;
@@ -104,6 +104,28 @@ div.right-menu {
     border-image-slice: 1;
 }
 
+ul.right-menu img {
+    margin-top: 5px;
+    width: 40px;
+}
+
+ul.right-menu {
+    list-style-type: none;
+    padding: 0;
+}
+
+#facebook-logo {
+    background-image: url("/content/images/facebook-logo.png");
+    width: 256px;
+    height: auto;
+}
+
+#facebook-logo:hover {
+    background-image: url('/content/images/facebook-logo-hover.png');
+    width: 40px;
+    height: 40px;
+}
+
 div.footer-menu-titles {
     border-bottom: 2px solid transparent;
     border-image: linear-gradient(to right, #2b2b2b 0%, #eee 100%);
@@ -132,6 +154,8 @@ ul.footer-list-menu a {
 }
 
 footer {
+    width: 80%;
+    margin: auto;
     border-top: 1px solid #2b2b2b;
     padding: 5px;
     margin-top: 50px;
@@ -189,6 +213,11 @@ ul#messages li.error {
     text-justify: inter-word;
 }
 
+a.read-more {
+    float: right;
+    font-style: italic;
+}
+
 a {
     text-decoration: none;
     color: #595959;
@@ -239,30 +268,31 @@ div.registration-inputs {
     display: inline;
 }
 
-.divTable
-{
+.divTable {
     display:  table;
 }
 
-.divRow
-{
+.divRow {
     display:table-row;
     width:auto;
 
 }
 
-.divCell
-{
+.divCell {
     float:left;
+    line-height: 20px;
     display:table-column;
     width:200px;
 }
 
-.divCell-buttons
-{
+.divCell-titles {
+    font-weight: 600;
+    line-height: 20px;
     float:left;
     display:table-column;
-    width:400px;
+    width:200px;
+    text-transform: uppercase;
+
 }
 
 .address-title {

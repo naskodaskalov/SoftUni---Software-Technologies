@@ -1,4 +1,4 @@
-<?php $this->title = 'Контакт с нас'; ?>
+<?php $this->title = perm_title . ' :: Контакт с нас'; ?>
 
 <h1 class="pages-titles"><?=htmlspecialchars($this->title)?></h1>
 

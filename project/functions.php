@@ -87,7 +87,7 @@ function cutLongText(string $text, int $maxSize=100, bool $htmlEscape = true) : 
     $append = '';
     if (strlen($text) > $maxSize) {
         $text = substr($text, 0, $maxSize);
-        $append ='<a href="' . APP_ROOT . '/home/view/' . $advertisement['id']. '">';
+        $append = '...';
     }
     if ($htmlEscape)
         $text = htmlspecialchars($text);

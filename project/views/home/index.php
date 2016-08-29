@@ -11,18 +11,18 @@
 
 <h2 class="pages-titles"><?=htmlspecialchars($this->title)?>!</h2>
 
-<main id="advertisements">
+<main>
     <article>
-        <?php foreach ($this->advertisements as $advertisement) : ?>
-            <a href="<?=APP_ROOT?>/home/view/<?=$advertisement['id']?>">
-                <h2 class="title"><?=htmlentities($advertisement['title'])?></h2>
+        <?php foreach ($this->advertisements as $this->advertisement) : ?>
+            <a href="<?=APP_ROOT?>/home/view/<?=$this->advertisement['id']?>">
+                <h2 class="title"><?=htmlentities($this->advertisement['title'])?></h2>
             </a>
             <div class="date">Публикувана на
-                <?=(new DateTime($advertisement['date']))->format('d-M-Y')?>
-                от <i><?=htmlentities($advertisement['full_name'])?></i>
+                <?=(new DateTime($this->advertisement['date']))->format('d-M-Y')?>
+                от <a href="<?=APP_ROOT?>/users/profile/<?=$this->advertisement['user_id']?>"><i><?=htmlentities($this->advertisement['full_name'])?></i></a>
             </div>
-            <p class="content-index"><?=$advertisement['content']?></p>
-            <i>Цена: </i><?=htmlentities($advertisement['price'])?>
+            <p class="content-index"><?=$this->advertisement['content']?></p>
+            <i>Цена: </i><?=htmlentities($this->advertisement['price'])?> лв.
         <?php endforeach ?>
     </article>
 </main>

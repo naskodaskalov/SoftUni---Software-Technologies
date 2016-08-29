@@ -1,4 +1,4 @@
-<?php $this->title = 'Влезте в системата'; ?>
+<?php $this->title = perm_title . ' :: Влезте в системата'; ?>
 
 <h2 class="pages-titles"><?= htmlspecialchars($this->title) ?></h2>
 

@@ -21,13 +21,14 @@
         <?php if ($this->isLoggedIn && $_SESSION['username'] == "admin") { ?>
             <li><a href="<?=APP_ROOT?>/advertisements">Всички обяви</a></li>
             <li><a href="<?=APP_ROOT?>/advertisements/create">Добавете нова обява</a></li>
-            <li><a href="<?=APP_ROOT?>/users">Users</a></li>
+            <li><a href="<?=APP_ROOT?>/users">Потребители</a></li>
             <li><a href="<?=APP_ROOT?>/users/logout">Излез</a></li>
         <?php } elseif (!$this->isLoggedIn) { ?>
             <li><a href="<?=APP_ROOT?>/users/login">Влез</a> / <a href="<?=APP_ROOT?>/users/register">Регистрация</a></li>
         <?php } else { ?>
-                <li><a href="<?=APP_ROOT?>/advertisements/create">Добавете нова обява</a></li>
-                <li><a href="<?=APP_ROOT?>/users/logout">Излез</a></li>
+            <li><a href="<?=APP_ROOT?>/advertisements">Всички обяви</a></li>
+            <li><a href="<?=APP_ROOT?>/advertisements/create">Добавете нова обява</a></li>
+            <li><a href="<?=APP_ROOT?>/users/logout">Излез</a></li>
         <?php } ?>
 
         <li><a href="<?=APP_ROOT?>/contacts">Контакт с нас</a></li>

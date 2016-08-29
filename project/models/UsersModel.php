@@ -2,6 +2,22 @@
 
 class UsersModel extends BaseModel
 {
+    public function getAll() : array
+    {
+        $statement = self::$db->query("SELECT * FROM users ORDER BY id");
+        return $statement->fetch_all(MYSQLI_ASSOC);
+    }
+
+    public function getUserById(int $id)
+    {
+        $statement = self::$db->prepare(
+            "SELECT * FROM users WHERE id = ?");
+        $statement->bind_param("i", $id);
+        $statement->execute();
+        $result = $statement->get_result()->fetch_assoc();
+        return $result;
+    }
+
     public function login(string $username, string $password)
     {
         $statement = self::$db->prepare(
@@ -28,4 +44,5 @@ class UsersModel extends BaseModel
         $user_id = self::$db->query("SELECT LAST_INSERT_ID()")->fetch_row()[0];
         return $user_id;
     }
+
 }

@@ -17,6 +17,9 @@ Project conception:
 	3.6) Users can comment on the advertisements<br/>
 4) Ready with:<br/>
 	4.1) Users can register and login<br/>
+	4.2) Finish design<br/>
+	4.3) Registered users can publish their advertisements<br/>
+	4.4) Only the Admin can edit/delete the allready published advertisements<br/>
+	4.5) Non-registered users can only read the published advertisements<br/>
 5) TODO:<br/>
-	- make header logo and finish the web-design<br/>
-	- steps 3.2, 3.3, 3.4, 3.5, 3.6<br/>
+	- steps 3.4, 3.6<br/>

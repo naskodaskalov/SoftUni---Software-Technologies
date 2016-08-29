@@ -2,6 +2,12 @@
 
 class UsersController extends BaseController
 {
+    public function index()
+    {
+        $this->authorize();
+        $this->users = $this->model->getAll();
+    }
+
     public function register()
     {
 		if ($this->isPost) {
@@ -65,5 +71,17 @@ class UsersController extends BaseController
 		session_destroy();
         $this->addInfoMessage("Успешен изход!");
         $this->redirect("");
+    }
+
+    public function profile(int $id) {
+        $this->users = $this->model->getUserById($id);
+        if (!$this->users)
+        {
+            $this->addErrorMessage("Грешка: невалидно ID!");
+            $this->redirect("");
+        }
+        $this->user = $this->users;
+
+
     }
 }
