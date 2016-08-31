@@ -4,7 +4,7 @@
             <div>
                 <ul class="footer-list-menu">
                     <li><a href="<?=APP_ROOT?>">Начало</a></li>
-                    <li><a href="<?=APP_ROOT?>/project/advertisements">Всички обяви</a></li>
+                    <li><a href="<?=APP_ROOT?>/advertisements">Всички обяви</a></li>
                     <li><a href="<?=APP_ROOT?>/contacts">Контакт с нас</a></li>
                     <li><a href="<?=APP_ROOT?>/#">Условия за ползване на сайта</a></li>
                 </ul>

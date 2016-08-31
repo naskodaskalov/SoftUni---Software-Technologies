@@ -48,7 +48,7 @@ class UsersModel extends BaseModel
     public function getAllAdsByUsers() : array
     {
         $statement = self::$db->query(
-            "SELECT * FROM advertisements ORDER BY date DESC ");
+            "SELECT * FROM advertisements LEFT JOIN users ON advertisements.user_id = users.id  ORDER BY date DESC ");
         return $statement->fetch_all(MYSQLI_ASSOC);
     }
 }

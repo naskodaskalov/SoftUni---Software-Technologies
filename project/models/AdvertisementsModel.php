@@ -5,7 +5,7 @@ class AdvertisementsModel extends BaseModel
     public function getAllAds() : array
     {
         $statement = self::$db->query(
-            "SELECT * FROM advertisements ORDER BY date DESC ");
+            "SELECT * FROM advertisements LEFT JOIN users ON advertisements.user_id = users.id  ORDER BY date DESC ");
         return $statement->fetch_all(MYSQLI_ASSOC);
     }
 
@@ -30,10 +30,16 @@ class AdvertisementsModel extends BaseModel
 
     public function edit(string $id, string $title, string $content, string $price, int $user_id) : bool
     {
-        $statement = self::$db->prepare("UPDATE advertisements SET title = ?, content = ?, price = ?, user_id = ? WHERE id = ?");
+        $statement = self::$db->prepare("UPDATE advertisements SET title = ?, content = ?, price = ?, user_id = ?WHERE id = ?");
         $statement->bind_param("sssis", $title, $content, $price, $user_id,  $id);
         $statement->execute();
         return $statement->affected_rows >= 0;
+    }
+
+    public function categories() : array
+    {
+        $statement = self::$db->query("SELECT type_category FROM categories ORDER BY id ASC ");
+        return $statement->fetch_all(MYSQLI_ASSOC);
     }
 
     public function delete(int $id) : bool
@@ -44,4 +50,5 @@ class AdvertisementsModel extends BaseModel
         $statement->execute();
         return $statement->affected_rows == 1;
     }
+
 }

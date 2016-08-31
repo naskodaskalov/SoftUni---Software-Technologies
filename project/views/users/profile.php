@@ -25,38 +25,44 @@
         <div class="divRow">
             <div class="divCell-titles">Всички обяви на потребителя:</div>
             <div class="divCell">
-                <table>
-                    <tr>
-                        <th>ID</th>
-                        <th>Заглавие</th>
-                        <th>Съдържание</th>
-                        <th>Цена</th>
-                        <th>Дата</th>
-                        <th>Автор</th>
-                        <?php if ($_SESSION['user_id'] == $this->users['id'] || $_SESSION['user_id'] == "5") { ?>
+
+            </div>
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <th>Заглавие</th>
+                    <th>Съдържание</th>
+                    <th>Цена</th>
+                    <th>Дата</th>
+                    <th>Автор</th>
+                    <?php if ($_SESSION['user_id'] == $this->users['id'] || $_SESSION['user_id'] == "5") { ?>
                         <th>Админ действия</th>
-                        <?php } ?>
-                    </tr>
-                    <?php foreach ($this->usersAds as $usersAds) {
-                        if ($this->users['id'] == $usersAds['user_id']) {?>
-                            <tr>
-                                <td><?=$usersAds['id']?></td>
-                                <td><?=htmlspecialchars($usersAds['title'])?></td>
-                                <td><?=cutLongText($usersAds['content'])?><br/><a class="read-more" href="<?=APP_ROOT?>/home/view/<?=$usersAds['id']?>"> [дочети]</a></td>
-                                <td><?=$usersAds['price']?> лв.</td>
-                                <td><?=htmlspecialchars($usersAds['date'])?></td>
-                                <td><?=$usersAds['user_id']?></td>
-                                <?php if ($_SESSION['user_id'] == $this->users['id'] || $_SESSION['user_id'] == "5") { ?>
+                    <?php } ?>
+                </tr>
+                <?php foreach ($this->usersAds as $usersAds) {
+                    if ($this->users['id'] == $usersAds['user_id']) {?>
+                        <tr>
+                            <td><?=$usersAds['id']?></td>
+                            <td><?=htmlspecialchars($usersAds['title'])?></td>
+                            <td><?=cutLongText($usersAds['content'])?><br/><a class="read-more" href="<?=APP_ROOT?>/home/view/<?=$usersAds['id']?>"> [дочети]</a></td>
+                            <td><?=$usersAds['price']?> лв.</td>
+                            <td><?=htmlspecialchars($usersAds['date'])?></td>
+                            <td><?php if ($usersAds['full_name'] == null) {
+                                    echo $usersAds['username'];
+                                } else {
+                                    echo $usersAds['full_name'];
+                                } ?>
+                            </td>
+                            <?php if ($_SESSION['user_id'] == $this->users['id'] || $_SESSION['user_id'] == "5") { ?>
                                 <td><a href="<?=APP_ROOT?>/advertisements/edit/<?=$usersAds['id']?>">[Edit]</a>
                                     <a href="<?=APP_ROOT?>/advertisements/delete/<?=$usersAds['id']?>">[Delete]</a>
                                 </td>
-                                <?php } ?>
-                            </tr>
-                        <?php } else {
+                            <?php } ?>
+                        </tr>
+                    <?php } else {
 
-                        }} ?>
-                </table>
-            </div>
+                    }} ?>
+            </table>
         </div>
     </div>
 </main>

@@ -14,4 +14,10 @@ abstract class BaseModel
             }
         }
     }
+
+    public function categories() : array
+    {
+        $statement = self::$db->query("SELECT type_category FROM categories ORDER BY id ASC ");
+        return $statement->fetch_all(MYSQLI_ASSOC);
+    }
 }

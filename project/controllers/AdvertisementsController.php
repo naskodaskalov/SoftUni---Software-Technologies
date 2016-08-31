@@ -44,6 +44,7 @@ class AdvertisementsController extends BaseController
             $content = $_POST['content'];
             $price = $_POST['price'];
             $user_id = $_POST['user_id'];
+            $categories = $_POST['categories'];
             if (strlen($title) < 2){
                 $this->setValidationError("title", "Заглавието не може да бъде по-кратко от 2 символа.");
             }
@@ -59,7 +60,7 @@ class AdvertisementsController extends BaseController
 //                $this->setValidationError("user_id", "Невалидно ID на автора!");
 //            }
             if ($this->formValid()) {
-                if ($this->model->edit($id, $title, $content, $price, $user_id)) {
+                if ($this->model->edit($id, $title, $content, $price, $user_id, $categories)) {
                     $this->addInfoMessage("Обявата беше успешно редактирана!");
                 } else {
                     $this->addErrorMessage("Грешка: обявата не може да бъде редактирана!");
@@ -78,6 +79,7 @@ class AdvertisementsController extends BaseController
             $this->redirect("advertisements");
         }
         $this->advertisement = $advertisement;
+        $this->categories = $this->model->categories();
         //$this->users = $this->model->getAllUsers();
     }
 
@@ -98,5 +100,15 @@ class AdvertisementsController extends BaseController
             }
             $this->advertisement = $advertisement;
         }
+    }
+
+    function adsByCategories(int $id) {
+        $advertisement = $this->model->adsByCategories($id);
+        if (!$advertisement)
+        {
+            $this->addErrorMessage("Грешка: невалиден номер на обявата!");
+            $this->redirect("");
+        }
+        $this->advertisement = $advertisement;
     }
 }

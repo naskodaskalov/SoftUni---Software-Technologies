@@ -11,7 +11,7 @@
         <th>Дата</th>
         <th>Автор</th>
         <?php if ($_SESSION['username'] == "admin") { ?>
-        <th>Админ действия</th>
+            <th>Админ действия</th>
         <?php }?>
     </tr>
     <?php foreach ($this->advertisements as $advertisement) {?>
@@ -21,18 +21,13 @@
             <td><?=cutLongText($advertisement['content'])?><br/><a class="read-more" href="<?=APP_ROOT?>/home/view/<?=$advertisement['id']?>"> [дочети]</a></td>
             <td><?=$advertisement['price']?> лв.</td>
             <td><?=htmlspecialchars($advertisement['date'])?></td>
-<!--            <td>--><?//=$advertisement['full_name']?>
-            <td><?php if ($advertisement['full_name'] == null) {
-                echo $advertisement['username'];
-                } else {
-                    echo $advertisement['full_name'];
-                } ?>
-            </td>
+            <td><?=$advertisement['user_id']?></td>
             <?php if ($_SESSION['username'] == "admin") {?>
-            <td><a href="<?=APP_ROOT?>/advertisements/edit/<?=$advertisement['id']?>">[Edit]</a>
-                <a href="<?=APP_ROOT?>/advertisements/delete/<?=$advertisement['id']?>">[Delete]</a>
-            </td>
+                <td><a href="<?=APP_ROOT?>/advertisements/edit/<?=$advertisement['id']?>">[Edit]</a>
+                    <a href="<?=APP_ROOT?>/advertisements/delete/<?=$advertisement['id']?>">[Delete]</a>
+                </td>
             <?php } ?>
         </tr>
     <?php } ?>
 </table>
+

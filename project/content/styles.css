@@ -38,6 +38,7 @@ nav {
     display: flex;
     margin-left: 5px;
     float: left;
+    max-height: 100%;
 }
 
 main {
@@ -301,7 +302,7 @@ div.registration-inputs {
     float:left;
     line-height: 20px;
     display:table-column;
-    min-width:100px;
+    width: 200px;
 }
 
 .divCell-titles {
@@ -309,9 +310,8 @@ div.registration-inputs {
     line-height: 20px;
     float:left;
     display:table-column;
-    width:200px;
     text-transform: uppercase;
-
+    width: 200px;
 }
 
 .address-title {
@@ -321,8 +321,28 @@ div.registration-inputs {
     text-transform: uppercase;
 }
 
+.hidden {
+    display: none;
+}
+
+.show {
+    display: block;
+    margin-left: 10px;
+}
+
 .headlines::first-line {
     font-size: 20px;
+}
+
+/*ul#hidden-menu>li {*/
+    /*list-style-type: none;*/
+    /*padding: 0;*/
+    /*margin: 0;*/
+/*}*/
+
+#allads:hover {
+    cursor:pointer;
+    curson:hand;
 }
 
 .headlines>span {
