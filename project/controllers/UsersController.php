@@ -81,7 +81,11 @@ class UsersController extends BaseController
             $this->redirect("");
         }
         $this->user = $this->users;
+        $this->usersAds = $this->model->getAllAdsByUsers();
+    }
 
-
+    public function myAds()
+    {
+        $this->myads = $this->model->getAllAdsByUsers();
     }
 }

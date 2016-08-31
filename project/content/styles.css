@@ -201,6 +201,25 @@ ul#messages li.error {
     margin-right: 10px;
 }
 
+div.ads-form>div {
+    display: inline-block;
+    line-height: 30px;
+    text-transform: uppercase;
+}
+
+div.ads-form>div::first-letter {
+    font-size: 25px;
+}
+
+form.ads-form>div {
+    text-transform: uppercase;
+    line-height: 30px;
+}
+
+form.ads-form>div::first-letter {
+    font-size: 25px;
+}
+
 .content {
     width: 80%;
     text-align: justify;
@@ -282,7 +301,7 @@ div.registration-inputs {
     float:left;
     line-height: 20px;
     display:table-column;
-    width:200px;
+    min-width:100px;
 }
 
 .divCell-titles {

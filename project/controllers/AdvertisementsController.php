@@ -64,7 +64,12 @@ class AdvertisementsController extends BaseController
                 } else {
                     $this->addErrorMessage("Грешка: обявата не може да бъде редактирана!");
                 }
-                $this->redirect("advertisements");
+                if ($_SESSION['user_id'] == $user_id) {
+                    header('Location: '. APP_ROOT . '/users/myads');
+                    exit();
+                } else {
+                    $this->redirect("advertisements");
+                }
             }
         }
         $advertisement = $this->model->getById($id);

@@ -2,7 +2,7 @@
 
 class HomeModel extends BaseModel
 {
-    public function getLastAds(int $maxCount = 5) : array
+    public function getLastAds(int $maxCount) : array
     {
         $statement = self::$db->query(
             "SELECT advertisements.id, title, content, date, user_id, full_name, price " .

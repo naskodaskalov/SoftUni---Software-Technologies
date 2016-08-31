@@ -6,6 +6,7 @@
     <link rel="icon" href="<?=APP_ROOT?>/content/images/favicon.ico" />
     <script src="<?=APP_ROOT?>/content/scripts/jquery-3.0.0.min.js"></script>
     <script src="<?=APP_ROOT?>/content/scripts/blog-scripts.js"></script>
+
     <title><?php if (isset($this->title)) echo htmlspecialchars($this->title) ?></title>
 </head>
 
@@ -21,6 +22,7 @@
         <?php if ($this->isLoggedIn && $_SESSION['username'] == "admin") { ?>
             <li><a href="<?=APP_ROOT?>/advertisements">Всички обяви</a></li>
             <li><a href="<?=APP_ROOT?>/advertisements/create">Добавете нова обява</a></li>
+            <li><a href="<?=APP_ROOT?>/users/myads">Моите обяви</a></li>
             <li><a href="<?=APP_ROOT?>/users">Потребители</a></li>
             <li><a href="<?=APP_ROOT?>/users/logout">Излез</a></li>
         <?php } elseif (!$this->isLoggedIn) { ?>
@@ -28,6 +30,7 @@
         <?php } else { ?>
             <li><a href="<?=APP_ROOT?>/advertisements">Всички обяви</a></li>
             <li><a href="<?=APP_ROOT?>/advertisements/create">Добавете нова обява</a></li>
+            <li><a href="<?=APP_ROOT?>/users/myads">Моите обяви</a></li>
             <li><a href="<?=APP_ROOT?>/users/logout">Излез</a></li>
         <?php } ?>
 

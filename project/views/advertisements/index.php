@@ -14,7 +14,7 @@
         <th>Админ действия</th>
         <?php }?>
     </tr>
-    <?php foreach ($this->advertisements as $advertisement) { ?>
+    <?php foreach ($this->advertisements as $advertisement) {?>
         <tr>
             <td><?=$advertisement['id']?></td>
             <td><?=htmlspecialchars($advertisement['title'])?></td>
