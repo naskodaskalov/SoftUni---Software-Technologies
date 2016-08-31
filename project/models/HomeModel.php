@@ -14,7 +14,7 @@ class HomeModel extends BaseModel
     public function getAdsById(int $id)
     {
         $statement = self::$db->prepare(
-            "SELECT advertisements.id, title, content, date, full_name, username, user_id, price " .
+            "SELECT advertisements.id, title, content, date, full_name, email, phone, username, user_id, price " .
             "FROM advertisements LEFT JOIN users ON advertisements.user_id = users.id " .
             "WHERE advertisements.id = ?");
         $statement->bind_param("i", $id);

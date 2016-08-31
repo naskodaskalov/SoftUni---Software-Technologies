@@ -31,12 +31,12 @@ class UsersModel extends BaseModel
         return false;
     }
 
-    public function register(string $full_name, string $username, string $password, string $email, string $phone, string $photo)
+    public function register(string $full_name, string $username, string $password, string $email, string $phone)
     {
         $password_hash = password_hash($password, PASSWORD_DEFAULT);
         $statement = self::$db->prepare(
-            "INSERT INTO users (full_name, username, password_hash, email, phone, photo) VALUES (?, ?, ?, ?, ?, ?)");
-        $statement->bind_param("ssssss", $full_name, $username, $password_hash, $email, $phone, $photo);
+            "INSERT INTO users (full_name, username, password_hash, email, phone) VALUES (?, ?, ?, ?, ?)");
+        $statement->bind_param("sssss", $full_name, $username, $password_hash, $email, $phone);
         $statement->execute();
         if ($statement->affected_rows != 1) {
             return false;
@@ -48,7 +48,7 @@ class UsersModel extends BaseModel
     public function getAllAdsByUsers() : array
     {
         $statement = self::$db->query(
-            "SELECT * FROM advertisements LEFT JOIN users ON advertisements.user_id = users.id  ORDER BY date DESC ");
+            "SELECT advertisements.id, title, content, date, user_id, full_name, username, price  FROM advertisements LEFT JOIN users ON advertisements.user_id = users.id  ORDER BY date DESC ");
         return $statement->fetch_all(MYSQLI_ASSOC);
     }
 }

@@ -29,22 +29,20 @@
             </div>
             <table>
                 <tr>
-                    <th>ID</th>
                     <th>Заглавие</th>
                     <th>Съдържание</th>
                     <th>Цена</th>
                     <th>Дата</th>
                     <th>Автор</th>
-                    <?php if ($_SESSION['user_id'] == $this->users['id'] || $_SESSION['user_id'] == "5") { ?>
+                    <?php if (isset($_SESSION['username']) && $_SESSION['user_id'] == $this->users['id'] || isset($_SESSION['username']) && $_SESSION['user_id'] == "5") { ?>
                         <th>Админ действия</th>
                     <?php } ?>
                 </tr>
                 <?php foreach ($this->usersAds as $usersAds) {
                     if ($this->users['id'] == $usersAds['user_id']) {?>
                         <tr>
-                            <td><?=$usersAds['id']?></td>
                             <td><?=htmlspecialchars($usersAds['title'])?></td>
-                            <td><?=cutLongText($usersAds['content'])?><br/><a class="read-more" href="<?=APP_ROOT?>/home/view/<?=$usersAds['id']?>"> [дочети]</a></td>
+                            <td><?=cutLongText($usersAds['content'])?><br/><a href="<?=APP_ROOT?>/home/view/<?=$usersAds['id']?>"> [дочети]</a></td>
                             <td><?=$usersAds['price']?> лв.</td>
                             <td><?=htmlspecialchars($usersAds['date'])?></td>
                             <td><?php if ($usersAds['full_name'] == null) {
@@ -53,7 +51,7 @@
                                     echo $usersAds['full_name'];
                                 } ?>
                             </td>
-                            <?php if ($_SESSION['user_id'] == $this->users['id'] || $_SESSION['user_id'] == "5") { ?>
+                            <?php if (isset($_SESSION['username']) && $_SESSION['user_id'] == $this->users['id'] || isset($_SESSION['username']) &&  $_SESSION['user_id'] == "5") { ?>
                                 <td><a href="<?=APP_ROOT?>/advertisements/edit/<?=$usersAds['id']?>">[Edit]</a>
                                     <a href="<?=APP_ROOT?>/advertisements/delete/<?=$usersAds['id']?>">[Delete]</a>
                                 </td>
@@ -61,7 +59,8 @@
                         </tr>
                     <?php } else {
 
-                    }} ?>
+                    }
+                } ?>
             </table>
         </div>
     </div>

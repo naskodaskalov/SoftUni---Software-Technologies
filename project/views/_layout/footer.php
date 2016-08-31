@@ -6,7 +6,7 @@
                     <li><a href="<?=APP_ROOT?>">Начало</a></li>
                     <li><a href="<?=APP_ROOT?>/advertisements">Всички обяви</a></li>
                     <li><a href="<?=APP_ROOT?>/contacts">Контакт с нас</a></li>
-                    <li><a href="<?=APP_ROOT?>/#">Условия за ползване на сайта</a></li>
+                    <li><a href="<?=APP_ROOT?>/advertisements/create">Добави обява</a></li>
                 </ul>
             </div>
         </div>

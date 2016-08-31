@@ -31,10 +31,6 @@
                 <div class="divCell"><input type="tel" id="phone" name="phone" placeholder="example:0888111222"/></div>
             </div>
             <div class="divRow">
-                <div class="divCell"><label for="photo">Линк към аватар:</label></div>
-                <div class="divCell"><input type="text" id="photo" name="photo" placeholder="link to your photo"/></div>
-            </div>
-            <div class="divRow">
                 <div class="divCell-buttons" align="center"><input type="submit" value="Регистрирай" />
                     <a href="<?=APP_ROOT?>/">[Отказ]</a><a href="<?=APP_ROOT?>/users/login">[Влез]</a></div>
             </div>

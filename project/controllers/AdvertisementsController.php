@@ -2,10 +2,10 @@
 
 class AdvertisementsController extends BaseController
 {
-    function onInit()
-    {
-        $this->authorize();
-    }
+    //    function onInit()
+    //    {
+    //        $this->authorize();
+    //    }
 
     public function index()
     {
@@ -24,10 +24,9 @@ class AdvertisementsController extends BaseController
                 $this->setValidationError("content", "Съдържанието трябва да бъде поне 10 символа.");
             }
             $price = $_POST['price'];
-            $photo = $_POST['photo'];
             if($this->formValid()) {
                 $userId = $_SESSION['user_id'];
-                if ($this->model->create($title, $content, $userId, $price, $photo)) {
+                if ($this->model->create($title, $content, $userId, $price)) {
                     $this->addInfoMessage("Обявата беше успешно добавена!");
                     $this->redirect("advertisements");
                 } else {
@@ -44,7 +43,6 @@ class AdvertisementsController extends BaseController
             $content = $_POST['content'];
             $price = $_POST['price'];
             $user_id = $_POST['user_id'];
-            $categories = $_POST['categories'];
             if (strlen($title) < 2){
                 $this->setValidationError("title", "Заглавието не може да бъде по-кратко от 2 символа.");
             }
@@ -60,7 +58,7 @@ class AdvertisementsController extends BaseController
 //                $this->setValidationError("user_id", "Невалидно ID на автора!");
 //            }
             if ($this->formValid()) {
-                if ($this->model->edit($id, $title, $content, $price, $user_id, $categories)) {
+                if ($this->model->edit($id, $title, $content, $price, $user_id)) {
                     $this->addInfoMessage("Обявата беше успешно редактирана!");
                 } else {
                     $this->addErrorMessage("Грешка: обявата не може да бъде редактирана!");
@@ -78,8 +76,7 @@ class AdvertisementsController extends BaseController
             $this->addErrorMessage("Грешка: обявата не съществува!");
             $this->redirect("advertisements");
         }
-        $this->advertisement = $advertisement;
-        $this->categories = $this->model->categories();
+        $this->advertisements = $advertisement;
         //$this->users = $this->model->getAllUsers();
     }
 
@@ -100,15 +97,5 @@ class AdvertisementsController extends BaseController
             }
             $this->advertisement = $advertisement;
         }
-    }
-
-    function adsByCategories(int $id) {
-        $advertisement = $this->model->adsByCategories($id);
-        if (!$advertisement)
-        {
-            $this->addErrorMessage("Грешка: невалиден номер на обявата!");
-            $this->redirect("");
-        }
-        $this->advertisement = $advertisement;
     }
 }

@@ -17,7 +17,6 @@ class UsersController extends BaseController
             $password_confirm = $_POST['password_confirm'];
             $email = $_POST['email'];
             $phone = $_POST['phone'];
-            $photo = $_POST['photo'];
 
             if (strlen($username) <= 2) {
                 $this->setValidationError("username", "Невалидно потребителско име. /минимална дължина - 3 символа/");
@@ -36,7 +35,7 @@ class UsersController extends BaseController
 //            }
 
             if ($this->formValid()) {
-                $userId = $this->model->register($full_name, $username, $password, $email, $phone, $photo);
+                $userId = $this->model->register($full_name, $username, $password, $email, $phone);
                 if ($userId) {
                     $_SESSION['username'] = $username;
                     $_SESSION['user_id'] = $userId;

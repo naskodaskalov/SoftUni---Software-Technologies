@@ -12,8 +12,8 @@
     <textarea name="content" rows="15" cols="100"></textarea>
     <div>Цена:</div>
     <input type="text" name="price" size="10"/>лв.
-    <div>Снимка:</div>
-    <input type="text" name="photo" />
+<!--    <div>Снимка:</div>-->
+<!--    <input type="text" name="photo" />-->
     <div><input type="submit" value="Добави обява" />
         <a href="<?=APP_ROOT?>/advertisements">[Отказ]</a></div>
 </form>

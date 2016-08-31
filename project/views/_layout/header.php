@@ -32,8 +32,9 @@
             <div class="greeting">Здравейте, <b><a href="<?=APP_ROOT?>/users/profile/<?=$_SESSION['user_id']?>"><?=htmlspecialchars($_SESSION['username'])?></a>!</b></div>
         <?php endif; ?>
         <li><a href="<?=APP_ROOT?>/">Начало</a></li>
+        <li><a href="<?=APP_ROOT?>/advertisements">Всички обяви</a></li>
         <?php if ($this->isLoggedIn && $_SESSION['username'] == "admin") { ?>
-            <li><a href="<?=APP_ROOT?>/advertisements">Всички обяви</a></li>
+
 <!--            <li id="allads">Категории обяви</li>-->
 <!--               --><?php //$this->categories = $this->model->categories();
 //                    foreach ($this->categories as $category) { ?>
@@ -46,7 +47,7 @@
         <?php } elseif (!$this->isLoggedIn) { ?>
             <li><a href="<?=APP_ROOT?>/users/login">Влез</a> / <a href="<?=APP_ROOT?>/users/register">Регистрация</a></li>
         <?php } else { ?>
-            <li><a href="<?=APP_ROOT?>/advertisements">Всички обяви</a></li>
+<!--            <li><a href="--><?//=APP_ROOT?><!--/advertisements">Всички обяви</a></li>-->
 <!--            <li id="allads">Категории обяви</li>-->
 <!--            <ul id="hidden-menu" class="hidden">-->
 <!--                --><?php

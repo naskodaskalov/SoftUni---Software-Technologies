@@ -8,13 +8,12 @@ class HomeController extends BaseController
         $this->sidebarAds = $lastAds;
     }
 
-    function view(int $id) {
-        $advertisement = $this->model->getAdsById($id);
-        if (!$advertisement)
+    public function view(int $id) {
+        $this->advertisement = $this->model->getAdsById($id);
+        if (!$this->advertisement)
         {
             $this->addErrorMessage("Грешка: невалиден номер на обявата!");
             $this->redirect("");
         }
-        $this->advertisement = $advertisement;
     }
 }
